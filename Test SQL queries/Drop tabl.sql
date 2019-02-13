@@ -1,0 +1,1 @@
+DROP TABLE devdb.dbo.FirstTestTable;
