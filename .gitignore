@@ -4,3 +4,5 @@
 .DS_Store
 *.log
 .idea
+[Bb]in
+[Oo]bj
