@@ -1,0 +1,66 @@
+﻿@model Webservice.Models.Measurement_Table
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Measurement_Table</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Compound_Table.StofNavn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Compound_Table.StofNavn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Station_Table.Navn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Station_Table.Navn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Units_Table.Navn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Units_Table.Navn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UTM_Table.GeometriId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UTM_Table.GeometriId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.datoMaerke)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.datoMaerke)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resultat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resultat)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

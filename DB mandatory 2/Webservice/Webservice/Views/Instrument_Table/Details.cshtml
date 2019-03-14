@@ -1,0 +1,42 @@
+﻿@model Webservice.Models.Instrument_Table
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Instrument_Table</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Equipment_Table.Navn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Equipment_Table.Navn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Station_Table.Navn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Station_Table.Navn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kode)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OpstillingId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

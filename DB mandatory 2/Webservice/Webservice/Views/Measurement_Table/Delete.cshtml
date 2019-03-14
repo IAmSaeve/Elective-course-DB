@@ -1,0 +1,72 @@
+﻿@model Webservice.Models.Measurement_Table
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Measurement_Table</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Compound_Table.StofNavn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Compound_Table.StofNavn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Station_Table.Navn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Station_Table.Navn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Units_Table.Navn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Units_Table.Navn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UTM_Table.GeometriId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UTM_Table.GeometriId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.datoMaerke)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.datoMaerke)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resultat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resultat)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

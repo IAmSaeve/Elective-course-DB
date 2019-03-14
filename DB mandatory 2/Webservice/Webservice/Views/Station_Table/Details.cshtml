@@ -1,0 +1,58 @@
+﻿@model Webservice.Models.Station_Table
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Station_Table</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Navn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Navn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Akronym)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Akronym)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UTMX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UTMX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UTMY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UTMY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UTMZone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UTMZone)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaaleStedId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
