@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using PagedList;
 using Webservice;
@@ -20,7 +21,7 @@ namespace Webservice.Controllers
         // GET: Measurement_Table
         public async Task<ActionResult> Index()
         {
-            var measurement_Table = db.Measurement_Table.Include(m => m.Compound_Table).Include(m => m.Station_Table).Include(m => m.Units_Table).Include(m => m.UTM_Table);
+            var measurement_Table = db.Measurement_Table.Include(m => m.Compound_Table).Include(m => m.Station_Table).Include(m => m.Units_Table).Include(m => m.UTM_Table).Take(10000);
             return View(await measurement_Table.ToListAsync());
         }
 
@@ -142,6 +143,27 @@ namespace Webservice.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult CreateLineChart()
+        {
+            List<string> x = new List<string>();
+            List<double> y = new List<double>();
+
+            var meassurementList = db.Measurement_Table.Take(100).ToList();
+            foreach (var m in meassurementList)
+            {
+                if (m.datoMaerke != null) x.Add(m.datoMaerke.ToString());
+                if (m.Resultat != null) y.Add((double)m.Resultat);
+            }
+
+            //Create bar chart
+            var chart = new Chart(width: 800, height: 400)
+                .AddSeries(chartType: "line",
+                    xValue: x, // Datomærke
+                    yValues: y) // Measurement
+                .GetBytes("png");
+            return File(chart, "image/bytes");
         }
     }
 }
